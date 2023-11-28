@@ -1,4 +1,4 @@
-import { FormControl, FormControlLabel, FormHelperText, FormLabel, Radio, RadioGroup } from "@mui/material";
+import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
 import { Form } from "react-bootstrap";
 import { Controller, RegisterOptions, useFormContext } from "react-hook-form";
 
@@ -40,9 +40,7 @@ export const FormRadioGroup = ({
                         </RadioGroup>
                     )}
                     rules={registerOptions} />
-
             </Form.Group>
-            <FormHelperText color={'red'}></FormHelperText>
         </FormControl>
     )
 };

@@ -6,6 +6,13 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { orange } from '@mui/material/colors';
 import AdminPanelPage from './pages/AdminPanelPage';
 
+// ---------
+// Defined 2 pages -
+// > Signup page ('/signup') to register users
+// > Admin page ('/admin') to list registered users from DB
+// > All other relative paths default to signup page
+// ---------
+
 function App() {
   const theme = createTheme({
     palette: {

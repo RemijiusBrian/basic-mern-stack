@@ -52,28 +52,30 @@ const AdminPanelPage = () => {
 
     return (
         <div className={styles.bg}>
-            <Container>
-                <Col>
-                    <div className={styles.headerContainer}>
-                        <h3>Users List</h3>
-                    </div>
-                    {usersList.length <= 0 && <p>There aren't any users registered yet.</p>}
-                    {usersList.map(user => (
-                        <ThemeProvider theme={primaryCardTheme}>
-                            <UserListItem
-                                name={`${user.firstName} ${user.lastName}`}
-                                email={user.email}
-                                phone={user.phone}
-                                dob={user.dob}
-                                gender={user.gender}
-                                createdAt={user.createdAt}
-                                className="mt-4"
-                                key={user._id}
-                            />
-                        </ThemeProvider>
-                    ))}
-                </Col>
-            </Container>
+            <div className={styles.overlay}>
+                <Container>
+                    <Col>
+                        <div className={styles.headerContainer}>
+                            <h3>Users List</h3>
+                        </div>
+                        {usersList.length <= 0 && <p>There aren't any users registered yet.</p>}
+                        {usersList.map(user => (
+                            <ThemeProvider theme={primaryCardTheme}>
+                                <UserListItem
+                                    name={`${user.firstName} ${user.lastName}`}
+                                    email={user.email}
+                                    phone={user.phone}
+                                    dob={user.dob}
+                                    gender={user.gender}
+                                    createdAt={user.createdAt}
+                                    className="mt-4"
+                                    key={user._id}
+                                />
+                            </ThemeProvider>
+                        ))}
+                    </Col>
+                </Container>
+            </div>
             <Snackbar
                 open={showSnackbar}
                 autoHideDuration={4000}

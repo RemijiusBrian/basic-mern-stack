@@ -10,6 +10,8 @@ import { FormRadioGroup } from "../components/form/RadioGroup";
 import { FormDateField } from "../components/form/DatePicker";
 import { orange } from "@mui/material/colors";
 import { useState } from "react";
+import FormPhoneInput from "../components/form/PhoneInput";
+import { isValidPhoneNumber } from "react-phone-number-input";
 
 const RegistrationPage = () => {
 
@@ -87,7 +89,7 @@ const RegistrationPage = () => {
                                         label="First Name"
                                         fullWidth
                                         registerOptions={{
-                                            required: 'Reqiured'
+                                            required: 'First name cannot be empty'
                                         }} />
 
                                     <TextInputField
@@ -95,7 +97,7 @@ const RegistrationPage = () => {
                                         label="Last Name"
                                         fullWidth
                                         registerOptions={{
-                                            required: 'Reqiured'
+                                            required: 'Last name cannot be empty'
                                         }} />
 
                                     <TextInputField
@@ -103,7 +105,11 @@ const RegistrationPage = () => {
                                         label="Email"
                                         fullWidth
                                         registerOptions={{
-                                            required: 'Reqiured',
+                                            required: 'Email cannot be empty',
+                                            pattern: {
+                                                value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                                message: 'Please enter a valid email',
+                                            },
                                         }} />
 
                                     <TextInputField
@@ -111,13 +117,17 @@ const RegistrationPage = () => {
                                         label="Phone"
                                         fullWidth
                                         registerOptions={{
-                                            required: 'Reqiured'
+                                            required: 'Phone cannot be empty',
+                                            validate: (value) => !isValidPhoneNumber(value) ? "Invalid Phone number" : true
                                         }} />
 
                                     <FormDateField
                                         name="dob"
                                         label="Date of Birth"
-                                        fullwidth />
+                                        fullwidth
+                                        registerOptions={{
+                                            required: 'Date of Birth cannot be empty'
+                                        }} />
 
                                     <FormRadioGroup
                                         values={['Male', 'Female']}

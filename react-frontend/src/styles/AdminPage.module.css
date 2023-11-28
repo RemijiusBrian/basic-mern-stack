@@ -3,6 +3,16 @@
     background-size: cover;
     height: 100vh;
     background-repeat: repeat-y;
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .headerContainer {
