@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel, FormHelperText } from "@mui/material"
+import { Checkbox, FormControlLabel, Typography } from "@mui/material"
 import { Form } from "react-bootstrap";
 import { Controller, RegisterOptions, useFormContext } from "react-hook-form"
 
@@ -32,7 +32,7 @@ const LabelledCheckBox = ({
                     control={control}
                 />
             }
-                label={<span style={{ fontSize: textSize, lineHeight: lineHeightNumber }}> {label}</span>}
+                label={<Typography style={{ fontSize: textSize }}> {label}</Typography>}
                 {...props}
             />
         </Form.Group>
