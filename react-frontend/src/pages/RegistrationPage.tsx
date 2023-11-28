@@ -10,7 +10,6 @@ import { FormRadioGroup } from "../components/form/RadioGroup";
 import { FormDateField } from "../components/form/DatePicker";
 import { orange } from "@mui/material/colors";
 import { useState } from "react";
-import FormPhoneInput from "../components/form/PhoneInput";
 import { isValidPhoneNumber } from "react-phone-number-input";
 
 const RegistrationPage = () => {
