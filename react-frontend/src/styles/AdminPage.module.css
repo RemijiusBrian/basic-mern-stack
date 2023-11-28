@@ -1,0 +1,12 @@
+.bg {
+    background: url("https://cdn.pixabay.com/photo/2020/09/15/15/56/background-5574027_640.png");
+    background-size: cover;
+    height: 100vh;
+    background-repeat: repeat-y;
+}
+
+.headerContainer {
+    padding: 12px;
+    border-radius: 12px;
+    background-color: beige;
+}

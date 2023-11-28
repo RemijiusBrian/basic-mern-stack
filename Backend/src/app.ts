@@ -22,7 +22,7 @@ app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
         statusCode = error.status;
         errorMessage = error.message;
     }
-    res.status(statusCode).json(apiRespose(statusCode, errorMessage));
+    res.status(statusCode).json(apiRespose(statusCode, { error: errorMessage }));
 });
 
 export default app;

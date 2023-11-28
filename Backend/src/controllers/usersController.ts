@@ -57,7 +57,7 @@ export const createUser: RequestHandler<unknown, unknown, CreateUserBody, unknow
             email: email,
             phone: phone,
             gender: gender,
-            dob: new Date(dob + " 01:00")
+            dob: new Date(dob)
         });
         res.status(201).json(apiRespose(201, newUser));
     } catch (error) {
